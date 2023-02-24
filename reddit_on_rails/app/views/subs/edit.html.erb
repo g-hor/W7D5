@@ -1,8 +1,8 @@
-<h1>Sign-Up</h1>
+<h1>Edit Sub</h1>
 
 <br />
 
-<form action="<%= users_url %>" method="post">
+<form action="<%= sub_url(@sub) %>" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
     <label for="username">Username</label>
