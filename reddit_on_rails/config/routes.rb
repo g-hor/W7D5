@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   resources :subs, except: [:edit]
 
-  root 'session#new'
+  root 'subs#index'
 end

@@ -7,6 +7,8 @@ class SubsController < ApplicationController
   end
 
   def index
+    @subs = Sub.order("updated_at DESC")
+    render :index
   end
 
   def show

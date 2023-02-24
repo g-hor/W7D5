@@ -1,0 +1,14 @@
+<h1>Front Page</h1>
+
+<ol>
+  <% @subs.each do |sub| %>
+    <li>
+      <ul>
+        <li>Title: <%= sub.title %></li>
+        <li>Description: <%= sub.description[0..50] %></li>
+        <li>Updated on: <%= sub.updated_at %></li>
+        <li>Created on: <%= sub.created_at %></li>
+      </ul>
+    </li>
+  <% end %>
+</ol>
