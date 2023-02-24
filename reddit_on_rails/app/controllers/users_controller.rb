@@ -25,15 +25,26 @@ class UsersController < ApplicationController
     end
 
     def edit
-
+        @user = current_user
+        render :edit
     end
 
     def update
-
+        @user = current_user
+        if @user.update(user_params)
+            redirect_to user_url(@user)
+        else
+            flash.now[:errors] = @user.errors.full_messages
+            flash.now[:username] = @user.username
+            render :edit
+        end
     end
 
     def destroy
-
+        @user = current_user
+        session[:session_token] = nil
+        @user.destroy
+        redirect_to new_session_url
     end
 
     private
