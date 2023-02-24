@@ -26,4 +26,5 @@ class ApplicationController < ActionController::Base
     def ensure_logged_out
         redirect_to users_url if logged_in?
     end
+    
 end
